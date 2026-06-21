@@ -63,6 +63,147 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- ABOUT -->
+  <section id="about" class="py-24 px-8 max-w-6xl mx-auto border-t border-white/5">
+    <div class="flex flex-col md:flex-row items-center gap-16">
+
+      <!-- Photo -->
+      <div id="photo-outer" class="relative flex-shrink-0 flex items-center justify-center" style="width:220px;height:254px;">
+
+        <!-- Outer rotating ring -->
+        <div style="
+          position:absolute;
+          inset:-4px;
+          border-radius:4px;
+          background:conic-gradient(from 0deg,#00d4aa,#5b8dee,#00d4aa);
+          clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+          animation:rotatering 6s linear infinite;
+          opacity:0.85;
+        "></div>
+
+        <!-- Dark inset behind photo -->
+        <div style="
+          position:absolute;
+          inset:3px;
+          background:#0d0f14;
+          clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+        "></div>
+
+        <!-- Photo with teal tint effect -->
+        <div class="photo-hex-wrap" style="
+          position:absolute;
+          inset:5px;
+          clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+          overflow:hidden;
+        ">
+        <img
+          id="carlo-photo"
+          src="/images/carlo.jpg"
+          alt="Carlo Schluter"
+          style="
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            object-position:top;
+            filter:saturate(0.15) brightness(0.9) sepia(0.4) hue-rotate(130deg) contrast(1.1);
+            transition:filter 0.5s ease;
+          "
+        />
+        <div
+          id="teal-overlay"
+          style="
+            position:absolute;
+            inset:0;
+            background:rgba(0,212,170,0.12);
+            mix-blend-mode:screen;
+            transition:opacity 0.5s ease;
+          "
+        ></div> 
+        </div>
+
+        <!-- Dashed outer hex ring -->
+        <svg style="position:absolute;inset:-12px;width:calc(100% + 24px);height:calc(100% + 24px);overflow:visible;" viewBox="0 0 244 278">
+          <polygon
+            points="122,6 238,68 238,210 122,272 6,210 6,68"
+            fill="none"
+            stroke="#5b8dee"
+            stroke-width="1"
+            stroke-dasharray="6 5"
+            opacity="0.4"
+          />
+        </svg>
+
+        <!-- Available badge -->
+        <div style="
+          position:absolute;
+          bottom:-18px;
+          left:50%;
+          transform:translateX(-50%);
+          display:flex;
+          align-items:center;
+          gap:6px;
+          padding:5px 14px;
+          border-radius:20px;
+          font-size:11px;
+          font-weight:600;
+          white-space:nowrap;
+          background:#0d0f14;
+          border:1px solid rgba(0,212,170,0.4);
+          color:#00d4aa;
+        ">
+          <span style="width:6px;height:6px;border-radius:50%;background:#00d4aa;animation:pulse 2s infinite;"></span>
+          Available for projects
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="flex-1">
+        <div class="text-xs font-semibold tracking-widest uppercase mb-4" style="color:#00d4aa;">About me</div>
+        <h2 class="text-3xl font-bold text-white mb-6">Bridging AI capability<br/>and business reality</h2>
+        <p class="text-[#8b909e] leading-relaxed mb-4">
+          I'm a Development Team Lead and AI Solutions Engineer based in Gauteng, South Africa, with over 25 years of experience building production software systems — from enterprise web platforms and real-time data pipelines to CRM integrations and mobile applications.
+        </p>
+        <p class="text-[#8b909e] leading-relaxed mb-4">
+          What drives me is the translation work — taking something technically complex and turning it into something that genuinely works for a business and its people. I remove unnecessary complexity, communicate clearly without jargon, and build solutions that hold up long after I've handed them over.
+        </p>
+        <p class="text-[#8b909e] leading-relaxed mb-8">
+          Now I'm applying that same approach to AI — helping established South African businesses implement intelligent systems that save time, surface insights, and create real competitive advantage.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="https://linkedin.com/in/carloschluter" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium border transition-colors hover:border-[#00d4aa]/50" style="border-color:rgba(255,255,255,0.12);color:#e8eaf0;">
+            <i class="ti ti-brand-linkedin" style="color:#0077b5;"></i>
+            LinkedIn
+          </a>
+          <a href="https://github.com/carlo-cls" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium border transition-colors hover:border-[#00d4aa]/50" style="border-color:rgba(255,255,255,0.12);color:#e8eaf0;">
+            <i class="ti ti-brand-github"></i>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <style>
+    @keyframes rotatering {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    .photo-hex-wrap:hover .photo-hex {
+      filter: saturate(1) brightness(1) sepia(0) hue-rotate(0deg) contrast(1) !important;
+    }
+    .photo-hex-wrap:hover .teal-overlay {
+      opacity: 0 !important;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>  
+
   <!-- SERVICES -->
   <section id="services" class="py-24 px-8 max-w-6xl mx-auto">
     <div class="text-xs font-semibold tracking-widest uppercase mb-4" style="color:#00d4aa;">What I build</div>
@@ -142,5 +283,24 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </footer>
+
+  <script>
+    window.addEventListener('load', () => {
+      const photo = document.getElementById('carlo-photo');
+      const overlay = document.getElementById('teal-overlay');
+      const outer = document.getElementById('photo-outer');
+
+      if (outer && photo) {
+        outer.addEventListener('mouseenter', () => {
+          photo.style.filter = 'saturate(1) brightness(1) sepia(0) hue-rotate(0deg) contrast(1)';
+          if (overlay) overlay.style.opacity = '0';
+        });
+        outer.addEventListener('mouseleave', () => {
+          photo.style.filter = 'saturate(0.15) brightness(0.9) sepia(0.4) hue-rotate(130deg) contrast(1.1)';
+          if (overlay) overlay.style.opacity = '1';
+        });
+      }
+    });
+  </script>
 
 </Layout>
