@@ -352,6 +352,7 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Right side form -->
       <div class="p-8 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
+        
         <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contact-form">
           <input type="hidden" name="form-name" value="contact" />
           <p style="display:none;">
@@ -421,12 +422,15 @@ import Layout from '../layouts/Layout.astro';
             >
               Send message
             </button>
-
-            <div id="form-success" style="display:none;" class="text-center py-3 rounded-lg text-sm font-medium" style="background:rgba(0,212,170,0.1);color:#00d4aa;border:1px solid rgba(0,212,170,0.2);">
-              ✓ Message sent! I'll get back to you within 24 hours.
-            </div>
           </div>
         </form>
+
+        <!-- Success message OUTSIDE the form -->
+        <div id="form-success" class="text-center py-6 rounded-lg text-sm font-medium" style="display:none;background:rgba(0,212,170,0.1);color:#00d4aa;border:1px solid rgba(0,212,170,0.2);">
+          <i class="ti ti-circle-check" style="font-size:32px;display:block;margin-bottom:8px;"></i>
+          Message sent! I'll get back to you within 24 hours.
+        </div>
+
       </div>
 
     </div>
@@ -462,26 +466,45 @@ import Layout from '../layouts/Layout.astro';
     });
   </script>
 
-  <script>
+<script>
+  window.addEventListener('load', () => {
     const form = document.getElementById('contact-form') as HTMLFormElement;
     const success = document.getElementById('form-success');
+
+    console.log('Form found:', form);
+    console.log('Success div found:', success);
 
     if (form) {
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
+        console.log('Form submitted');
+        
         const data = new FormData(form);
         const encoded = Array.from(data.entries())
           .map(([key, val]) => encodeURIComponent(key) + '=' + encodeURIComponent(val.toString()))
           .join('&');
-        await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: encoded
-        });
-        form.style.display = 'none';
-        if (success) success.style.display = 'block';
+
+        try {
+          const response = await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: encoded
+          });
+          console.log('Fetch response status:', response.status);
+          form.style.display = 'none';
+          console.log('Form hidden');
+          if (success) {
+            success.style.display = 'block';
+            console.log('Success shown');
+          } else {
+            console.log('Success div not found!');
+          }
+        } catch (err) {
+          console.log('Error:', err);
+        }
       });
     }
-  </script>  
+  });
+</script>
 
 </Layout>
