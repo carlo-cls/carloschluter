@@ -12,6 +12,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="hidden md:flex items-center gap-8">
       <a href="#about" class="text-sm text-[#8b909e] hover:text-white transition-colors">About</a>
       <a href="#services" class="text-sm text-[#8b909e] hover:text-white transition-colors">Services</a>
+      <a href="#process" class="text-sm text-[#8b909e] hover:text-white transition-colors">Process</a>
       <a href="#skills" class="text-sm text-[#8b909e] hover:text-white transition-colors">Skills</a>
       <a href="#contact" class="text-sm text-[#8b909e] hover:text-white transition-colors">Contact</a>
     </div>
@@ -227,6 +228,59 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </section>
+
+  <!-- HOW I WORK -->
+  <section id="process" class="py-24 px-8 max-w-6xl mx-auto border-t border-white/5">
+    <div class="text-xs font-semibold tracking-widest uppercase mb-4" style="color:#00d4aa;">My process</div>
+    <h2 class="text-3xl font-bold text-white mb-4">How I work</h2>
+    <p class="text-[#8b909e] mb-16 max-w-xl">Every engagement follows the same four steps — no surprises, no black boxes. You know exactly what's happening and why at every stage.</p>
+
+    <div class="grid md:grid-cols-4 gap-6">
+
+      <div class="relative p-6 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
+        <div class="text-5xl font-bold mb-4" style="color:rgba(0,212,170,0.15);">01</div>
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style="background:rgba(0,212,170,0.1);">
+          <i class="ti ti-search" style="color:#00d4aa;font-size:18px;"></i>
+        </div>
+        <h3 class="font-semibold text-white mb-2">Discovery</h3>
+        <p class="text-sm text-[#8b909e] leading-relaxed">I learn how your business operates, where the friction is, and where AI can genuinely create value.</p>
+      </div>
+
+      <div class="relative p-6 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
+        <div class="text-5xl font-bold mb-4" style="color:rgba(91,141,238,0.15);">02</div>
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style="background:rgba(91,141,238,0.1);">
+          <i class="ti ti-map" style="color:#5b8dee;font-size:18px;"></i>
+        </div>
+        <h3 class="font-semibold text-white mb-2">Strategy</h3>
+        <p class="text-sm text-[#8b909e] leading-relaxed">We define the solution together — what to build, what tools to use, what success looks like, and what it will cost.</p>
+      </div>
+
+      <div class="relative p-6 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
+        <div class="text-5xl font-bold mb-4" style="color:rgba(239,159,39,0.15);">03</div>
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style="background:rgba(239,159,39,0.1);">
+          <i class="ti ti-code" style="color:#EF9F27;font-size:18px;"></i>
+        </div>
+        <h3 class="font-semibold text-white mb-2">Build</h3>
+        <p class="text-sm text-[#8b909e] leading-relaxed">I design, build, and test the solution — keeping you informed throughout with clear updates in plain language.</p>
+      </div>
+
+      <div class="relative p-6 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
+        <div class="text-5xl font-bold mb-4" style="color:rgba(0,212,170,0.15);">04</div>
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style="background:rgba(0,212,170,0.1);">
+          <i class="ti ti-rocket" style="color:#00d4aa;font-size:18px;"></i>
+        </div>
+        <h3 class="font-semibold text-white mb-2">Handover</h3>
+        <p class="text-sm text-[#8b909e] leading-relaxed">You get full ownership — documentation, training, and ongoing support so your team can use and maintain what we built.</p>
+      </div>
+
+    </div>
+
+    <!-- Connector line (desktop only) -->
+    <div class="hidden md:flex items-center justify-between mt-6 px-6">
+      <div class="h-px flex-1" style="background:linear-gradient(to right,#00d4aa,#5b8dee,#EF9F27,#00d4aa);opacity:0.3;"></div>
+    </div>
+
+  </section>  
 
   <!-- SKILLS -->
   <section id="skills" class="py-24 px-8 max-w-6xl mx-auto border-t border-white/5">
