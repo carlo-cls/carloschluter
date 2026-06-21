@@ -317,14 +317,119 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- CONTACT -->
   <section id="contact" class="py-24 px-8 max-w-6xl mx-auto border-t border-white/5">
-    <div class="text-xs font-semibold tracking-widest uppercase mb-4" style="color:#00d4aa;">Get in touch</div>
-    <h2 class="text-3xl font-bold text-white mb-4">Let's build something together</h2>
-    <p class="text-[#8b909e] mb-10 max-w-lg">Have a business problem that AI could solve? Not sure where to start? Let's have a conversation — no jargon, no pressure.</p>
+    <div class="grid md:grid-cols-2 gap-16">
 
-    <a href="mailto:hello@carloschluter.com" class="inline-flex items-center gap-3 px-8 py-4 rounded-lg font-semibold transition-opacity hover:opacity-90" style="background:#00d4aa;color:#0d0f14;">
-      <i class="ti ti-mail"></i>
-      hello@carloschluter.com
-    </a>
+      <!-- Left side text -->
+      <div>
+        <div class="text-xs font-semibold tracking-widest uppercase mb-4" style="color:#00d4aa;">Get in touch</div>
+        <h2 class="text-3xl font-bold text-white mb-4">Let's build something together</h2>
+        <p class="text-[#8b909e] leading-relaxed mb-8">
+          Have a business problem that AI could solve? Not sure where to start? Let's have a conversation — no jargon, no pressure.
+        </p>
+
+        <!-- Contact details -->
+        <div class="flex flex-col gap-4">
+          <a href="mailto:hello@carloschluter.com" class="inline-flex items-center gap-3 text-sm text-[#8b909e] hover:text-white transition-colors">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(0,212,170,0.1);">
+              <i class="ti ti-mail" style="color:#00d4aa;font-size:18px;"></i>
+            </div>
+            hello@carloschluter.com
+          </a>
+          <a href="https://linkedin.com/in/carloschluter" target="_blank" class="inline-flex items-center gap-3 text-sm text-[#8b909e] hover:text-white transition-colors">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(91,141,238,0.1);">
+              <i class="ti ti-brand-linkedin" style="color:#5b8dee;font-size:18px;"></i>
+            </div>
+            linkedin.com/in/carloschluter
+          </a>
+          <div class="inline-flex items-center gap-3 text-sm text-[#8b909e]">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(239,159,39,0.1);">
+              <i class="ti ti-map-pin" style="color:#EF9F27;font-size:18px;"></i>
+            </div>
+            Gauteng, South Africa
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side form -->
+      <div class="p-8 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contact-form">
+          <input type="hidden" name="form-name" value="contact" />
+          <p style="display:none;">
+            <input name="bot-field" />
+          </p>
+
+          <div class="flex flex-col gap-5">
+            <div>
+              <label class="block text-sm font-medium text-[#a0a8b0] mb-2">Your name</label>
+              <input
+                type="text"
+                name="name"
+                required
+                placeholder="John Smith"
+                class="w-full px-4 py-3 rounded-lg text-sm text-white placeholder-[#555a6b] outline-none transition-colors"
+                style="background:#0d0f14;border:1px solid rgba(255,255,255,0.08);"
+                onfocus="this.style.borderColor='rgba(0,212,170,0.4)'"
+                onblur="this.style.borderColor='rgba(255,255,255,0.08)'"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-[#a0a8b0] mb-2">Email address</label>
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="john@company.com"
+                class="w-full px-4 py-3 rounded-lg text-sm text-white placeholder-[#555a6b] outline-none transition-colors"
+                style="background:#0d0f14;border:1px solid rgba(255,255,255,0.08);"
+                onfocus="this.style.borderColor='rgba(0,212,170,0.4)'"
+                onblur="this.style.borderColor='rgba(255,255,255,0.08)'"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-[#a0a8b0] mb-2">Company <span class="text-[#555a6b] font-normal">(optional)</span></label>
+              <input
+                type="text"
+                name="company"
+                placeholder="Your company name"
+                class="w-full px-4 py-3 rounded-lg text-sm text-white placeholder-[#555a6b] outline-none transition-colors"
+                style="background:#0d0f14;border:1px solid rgba(255,255,255,0.08);"
+                onfocus="this.style.borderColor='rgba(0,212,170,0.4)'"
+                onblur="this.style.borderColor='rgba(255,255,255,0.08)'"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-[#a0a8b0] mb-2">Message</label>
+              <textarea
+                name="message"
+                required
+                rows="4"
+                placeholder="Tell me about your business and what you're trying to achieve..."
+                class="w-full px-4 py-3 rounded-lg text-sm text-white placeholder-[#555a6b] outline-none transition-colors resize-none"
+                style="background:#0d0f14;border:1px solid rgba(255,255,255,0.08);"
+                onfocus="this.style.borderColor='rgba(0,212,170,0.4)'"
+                onblur="this.style.borderColor='rgba(255,255,255,0.08)'"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full py-3 rounded-lg font-semibold text-sm transition-opacity hover:opacity-90"
+              style="background:#00d4aa;color:#0d0f14;"
+            >
+              Send message
+            </button>
+
+            <div id="form-success" style="display:none;" class="text-center py-3 rounded-lg text-sm font-medium" style="background:rgba(0,212,170,0.1);color:#00d4aa;border:1px solid rgba(0,212,170,0.2);">
+              ✓ Message sent! I'll get back to you within 24 hours.
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
   </section>
 
   <!-- FOOTER -->
@@ -356,5 +461,27 @@ import Layout from '../layouts/Layout.astro';
       }
     });
   </script>
+
+  <script>
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    const success = document.getElementById('form-success');
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        const encoded = Array.from(data.entries())
+          .map(([key, val]) => encodeURIComponent(key) + '=' + encodeURIComponent(val.toString()))
+          .join('&');
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: encoded
+        });
+        form.style.display = 'none';
+        if (success) success.style.display = 'block';
+      });
+    }
+  </script>  
 
 </Layout>
