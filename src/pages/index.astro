@@ -285,35 +285,250 @@ import Layout from '../layouts/Layout.astro';
   <!-- SKILLS -->
   <section id="skills" class="py-24 px-8 max-w-6xl mx-auto border-t border-white/5">
     <div class="text-xs font-semibold tracking-widest uppercase mb-4" style="color:#00d4aa;">Tech stack</div>
-    <h2 class="text-3xl font-bold text-white mb-12">Tools & technologies</h2>
+    <h2 class="text-3xl font-bold text-white mb-4">Tools & technologies</h2>
+    <p class="text-[#8b909e] mb-10 max-w-xl">Hover any skill to see what I actually do with it. Filter by category to find what's relevant to you.</p>
 
-    <div class="flex flex-wrap gap-3">
-      {[
-        {label:'Prompt Engineering',hot:true},
-        {label:'Claude API',hot:true},
-        {label:'LangChain',hot:true},
-        {label:'RAG Systems',hot:true},
-        {label:'Spring Boot',hot:false},
-        {label:'Java',hot:false},
-        {label:'MySQL',hot:false},
-        {label:'JavaScript',hot:false},
-        {label:'Bootstrap',hot:false},
-        {label:'jQuery',hot:false},
-        {label:'Thymeleaf',hot:false},
-        {label:'Astro',hot:false},
-        {label:'Tailwind CSS',hot:false},
-        {label:'Node.js',hot:false},
-        {label:'PHP',hot:false},
-        {label:'Git',hot:false},
-        {label:'Netlify',hot:false},
-        {label:'Nginx',hot:false},
-      ].map(skill => (
-        <span class="px-4 py-2 rounded-full text-sm border" style={skill.hot ? 'background:rgba(0,212,170,0.08);border-color:rgba(0,212,170,0.3);color:#00d4aa;' : 'background:#131720;border-color:rgba(255,255,255,0.08);color:#8b909e;'}>
-          {skill.label}
-        </span>
-      ))}
+    <!-- Category tabs -->
+    <div class="flex flex-wrap gap-3 mb-10" id="skill-tabs">
+      <button class="skill-tab active" data-cat="all">All</button>
+      <button class="skill-tab" data-cat="ai">AI & ML</button>
+      <button class="skill-tab" data-cat="backend">Backend</button>
+      <button class="skill-tab" data-cat="frontend">Frontend</button>
+      <button class="skill-tab" data-cat="tools">Tools</button>
+    </div>
+
+    <!-- Flip card grid -->
+    <div class="grid gap-4" style="grid-template-columns:repeat(auto-fill,minmax(160px,1fr));" id="skills-grid">
+
+      <!-- AI & ML -->
+      <div class="skill-card" data-cat="ai">
+        <div class="flip-inner">
+          <div class="flip-front"><i class="ti ti-wand" style="color:#00d4aa;font-size:20px;margin-bottom:6px;display:block;"></i>Prompt Engineering</div>
+          <div class="flip-back" style="border-color:rgba(0,212,170,0.3);color:#00d4aa;">Designing reliable prompt systems, eval frameworks & production LLM pipelines</div>
+        </div>
+      </div>
+
+      <div class="skill-card" data-cat="ai">
+        <div class="flip-inner">
+          <div class="flip-front"><i class="ti ti-robot" style="color:#00d4aa;font-size:20px;margin-bottom:6px;display:block;"></i>Claude API</div>
+          <div class="flip-back" style="border-color:rgba(0,212,170,0.3);color:#00d4aa;">Anthropic API integration, tool use, streaming & multi-turn conversations</div>
+        </div>
+      </div>
+
+      <div class="skill-card" data-cat="ai">
+        <div class="flip-inner">
+          <div class="flip-front"><i class="ti ti-link" style="color:#00d4aa;font-size:20px;margin-bottom:6px;display:block;"></i>LangChain</div>
+          <div class="flip-back" style="border-color:rgba(0,212,170,0.3);color:#00d4aa;">AI pipeline orchestration, chaining, agents & memory management</div>
+        </div>
+      </div>
+
+      <div class="skill-card" data-cat="ai">
+        <div class="flip-inner">
+          <div class="flip-front"><i class="ti ti-database" style="color:#00d4aa;font-size:20px;margin-bottom:6px;display:block;"></i>RAG Systems</div>
+          <div class="flip-back" style="border-color:rgba(0,212,170,0.3);color:#00d4aa;">Vector databases, embeddings, retrieval tuning & document Q&A systems</div>
+        </div>
+      </div>
+
+      <div class="skill-card" data-cat="ai">
+        <div class="flip-inner">
+          <div class="flip-front"><i class="ti ti-cpu" style="color:#00d4aa;font-size:20px;margin-bottom:6px;display:block;"></i>OpenAI API</div>
+          <div class="flip-back" style="border-color:rgba(0,212,170,0.3);color:#00d4aa;">GPT-4 integration, function calling & AI feature development</div>
+        </div>
+      </div>
+
+      <!-- Backend -->
+      <div class="skill-card" data-cat="backend">
+        <div class="flip-inner">
+          <div class="flip-front"><i class="ti ti-coffee" style="color:#5b8dee;font-size:20px;margin-bottom:6px;display:block;"></i>Java</div>
+          <div class="flip-back" style="border-color:rgba(91,141,238,0.3);color:#5b8dee;">25+ years building enterprise applications, APIs & complex business logic</div>
+        </div>
+      </div>
+
+      <div class="skill-card" data-cat="backend">
+        <div class="flip-inner">
+          <div class="flip-front"><i class="ti ti-leaf" style="color:#5b8dee;font-size:20px;margin-bottom:6px;display:block;"></i>Spring Boot</div>
+          <div class="flip-back" style="border-color:rgba(91,141,238,0.3);color:#5b8dee;">REST APIs, security, JPA, dependency injection & microservices</div>
+        </div>
+      </div>
+
+      <div class="skill-card" data-cat="backend">
+        <div class="flip-inner">
+          <div class="flip-front"><i class="ti ti-database" style="color:#5b8dee;font-size:20px;margin-bottom:6px;display:block;"></i>MySQL</div>
+          <div class="flip-back" style="border-color:rgba(91,141,238,0.3);color:#5b8dee;">Complex stored procedures, views, query optimisation & schema design</div>
+        </div>
+      </div>
+
+      <div class="skill-card" data-cat="backend">
+        <div class="flip-inner">
+          <div class="flip-front"><i class="ti ti-brand-nodejs" style="color:#5b8dee;font-size:20px;margin-bottom:6px;display:block;"></i>Node.js</div>
+          <div class="flip-back" style="border-color:rgba(91,141,238,0.3);color:#5b8dee;">REST APIs, serverless functions & real-time backend services</div>
+        </div>
+      </div>
+
+      <div class="skill-card" data-cat="backend">
+        <div class="flip-inner">
+          <div class="flip-front"><i class="ti ti-brand-php" style="color:#5b8dee;font-size:20px;margin-bottom:6px;display:block;"></i>PHP</div>
+          <div class="flip-back" style="border-color:rgba(91,141,238,0.3);color:#5b8dee;">Custom web applications, WordPress development & MySQL integration</div>
+        </div>
+      </div>
+
+      <!-- Frontend -->
+      <div class="skill-card" data-cat="frontend">
+        <div class="flip-inner">
+          <div class="flip-front"><i class="ti ti-brand-javascript" style="color:#EF9F27;font-size:20px;margin-bottom:6px;display:block;"></i>JavaScript</div>
+          <div class="flip-back" style="border-color:rgba(239,159,39,0.3);color:#EF9F27;">ES6+, async/await, DOM manipulation & interactive UI development</div>
+        </div>
+      </div>
+
+      <div class="skill-card" data-cat="frontend">
+        <div class="flip-inner">
+          <div class="flip-front"><i class="ti ti-brand-bootstrap" style="color:#EF9F27;font-size:20px;margin-bottom:6px;display:block;"></i>Bootstrap</div>
+          <div class="flip-back" style="border-color:rgba(239,159,39,0.3);color:#EF9F27;">Responsive layouts, component systems & enterprise UI development</div>
+        </div>
+      </div>
+
+      <div class="skill-card" data-cat="frontend">
+        <div class="flip-inner">
+          <div class="flip-front"><i class="ti ti-brand-tailwind" style="color:#EF9F27;font-size:20px;margin-bottom:6px;display:block;"></i>Tailwind CSS</div>
+          <div class="flip-back" style="border-color:rgba(239,159,39,0.3);color:#EF9F27;">Utility-first styling, custom design systems & responsive components</div>
+        </div>
+      </div>
+
+      <div class="skill-card" data-cat="frontend">
+        <div class="flip-inner">
+          <div class="flip-front"><i class="ti ti-brand-jquery" style="color:#EF9F27;font-size:20px;margin-bottom:6px;display:block;"></i>jQuery</div>
+          <div class="flip-back" style="border-color:rgba(239,159,39,0.3);color:#EF9F27;">DOM manipulation, AJAX, DataTables & interactive UI components</div>
+        </div>
+      </div>
+
+      <div class="skill-card" data-cat="frontend">
+        <div class="flip-inner">
+          <div class="flip-front"><i class="ti ti-rocket" style="color:#EF9F27;font-size:20px;margin-bottom:6px;display:block;"></i>Astro</div>
+          <div class="flip-back" style="border-color:rgba(239,159,39,0.3);color:#EF9F27;">Static site generation, component islands & modern web performance</div>
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div class="skill-card" data-cat="tools">
+        <div class="flip-inner">
+          <div class="flip-front"><i class="ti ti-brand-git" style="color:#8b909e;font-size:20px;margin-bottom:6px;display:block;"></i>Git</div>
+          <div class="flip-back" style="border-color:rgba(255,255,255,0.15);color:#a0a8b0;">Branching strategies, pull requests, Bitbucket & GitHub workflows</div>
+        </div>
+      </div>
+
+      <div class="skill-card" data-cat="tools">
+        <div class="flip-inner">
+          <div class="flip-front"><i class="ti ti-brand-vscode" style="color:#8b909e;font-size:20px;margin-bottom:6px;display:block;"></i>VS Code</div>
+          <div class="flip-back" style="border-color:rgba(255,255,255,0.15);color:#a0a8b0;">Primary IDE with extensions for AI-assisted development</div>
+        </div>
+      </div>
+
+      <div class="skill-card" data-cat="tools">
+        <div class="flip-inner">
+          <div class="flip-front"><i class="ti ti-world" style="color:#8b909e;font-size:20px;margin-bottom:6px;display:block;"></i>Netlify</div>
+          <div class="flip-back" style="border-color:rgba(255,255,255,0.15);color:#a0a8b0;">CI/CD deployment, serverless functions & edge hosting</div>
+        </div>
+      </div>
+
+      <div class="skill-card" data-cat="tools">
+        <div class="flip-inner">
+          <div class="flip-front"><i class="ti ti-server" style="color:#8b909e;font-size:20px;margin-bottom:6px;display:block;"></i>Nginx</div>
+          <div class="flip-back" style="border-color:rgba(255,255,255,0.15);color:#a0a8b0;">VPS configuration, reverse proxy, SSL & production server management</div>
+        </div>
+      </div>
+
+      <div class="skill-card" data-cat="tools">
+        <div class="flip-inner">
+          <div class="flip-front"><i class="ti ti-git-branch" style="color:#8b909e;font-size:20px;margin-bottom:6px;display:block;"></i>Bitbucket</div>
+          <div class="flip-back" style="border-color:rgba(255,255,255,0.15);color:#a0a8b0;">Git repository management, pull requests & team code collaboration</div>
+        </div>
+      </div>
+
+      <div class="skill-card" data-cat="tools">
+        <div class="flip-inner">
+          <div class="flip-front"><i class="ti ti-api" style="color:#8b909e;font-size:20px;margin-bottom:6px;display:block;"></i>Postman</div>
+          <div class="flip-back" style="border-color:rgba(255,255,255,0.15);color:#a0a8b0;">REST API testing, collections & automated endpoint validation</div>
+        </div>
+      </div>
+
+      <div class="skill-card" data-cat="tools">
+        <div class="flip-inner">
+          <div class="flip-front"><i class="ti ti-file-report" style="color:#8b909e;font-size:20px;margin-bottom:6px;display:block;"></i>JasperReports</div>
+          <div class="flip-back" style="border-color:rgba(255,255,255,0.15);color:#a0a8b0;">Enterprise reporting, PDF generation & complex data visualisation</div>
+        </div>
+      </div>      
+
     </div>
   </section>
+
+  <style>
+    .skill-tab {
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: transparent;
+      color: #8b909e;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .skill-tab:hover {
+      border-color: rgba(255,255,255,0.2);
+      color: #fff;
+    }
+    .skill-tab.active {
+      background: rgba(0,212,170,0.1);
+      border-color: rgba(0,212,170,0.35);
+      color: #00d4aa;
+    }
+    .skill-card {
+      height: 100px;
+      perspective: 800px;
+      cursor: pointer;
+    }
+    .flip-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.45s ease;
+    }
+    .skill-card:hover .flip-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-front, .flip-back {
+      position: absolute;
+      inset: 0;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      backface-visibility: hidden;
+      padding: 12px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .flip-front {
+      background: #131720;
+      border: 1px solid rgba(255,255,255,0.07);
+      color: #e8eaf0;
+    }
+    .flip-back {
+      background: #0d0f14;
+      border: 1px solid;
+      color: #00d4aa;
+      transform: rotateY(180deg);
+      font-size: 11px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+    .skill-card.hidden {
+      display: none;
+    }
+  </style>
 
   <!-- CONTACT -->
   <section id="contact" class="py-24 px-8 max-w-6xl mx-auto border-t border-white/5">
@@ -466,45 +681,69 @@ import Layout from '../layouts/Layout.astro';
     });
   </script>
 
-<script>
-  window.addEventListener('load', () => {
-    const form = document.getElementById('contact-form') as HTMLFormElement;
-    const success = document.getElementById('form-success');
+  <script>
+    window.addEventListener('load', () => {
+      const form = document.getElementById('contact-form') as HTMLFormElement;
+      const success = document.getElementById('form-success');
 
-    console.log('Form found:', form);
-    console.log('Success div found:', success);
+      console.log('Form found:', form);
+      console.log('Success div found:', success);
 
-    if (form) {
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        console.log('Form submitted');
-        
-        const data = new FormData(form);
-        const encoded = Array.from(data.entries())
-          .map(([key, val]) => encodeURIComponent(key) + '=' + encodeURIComponent(val.toString()))
-          .join('&');
+      if (form) {
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          console.log('Form submitted');
+          
+          const data = new FormData(form);
+          const encoded = Array.from(data.entries())
+            .map(([key, val]) => encodeURIComponent(key) + '=' + encodeURIComponent(val.toString()))
+            .join('&');
 
-        try {
-          const response = await fetch('/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: encoded
-          });
-          console.log('Fetch response status:', response.status);
-          form.style.display = 'none';
-          console.log('Form hidden');
-          if (success) {
-            success.style.display = 'block';
-            console.log('Success shown');
-          } else {
-            console.log('Success div not found!');
+          try {
+            const response = await fetch('/', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+              body: encoded
+            });
+            console.log('Fetch response status:', response.status);
+            form.style.display = 'none';
+            console.log('Form hidden');
+            if (success) {
+              success.style.display = 'block';
+              console.log('Success shown');
+            } else {
+              console.log('Success div not found!');
+            }
+          } catch (err) {
+            console.log('Error:', err);
           }
-        } catch (err) {
-          console.log('Error:', err);
-        }
+        });
+      }
+    });
+  </script>
+
+  <script>
+    window.addEventListener('load', () => {
+      const tabs = document.querySelectorAll('.skill-tab');
+      const cards = document.querySelectorAll('.skill-card');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          const cat = (tab as HTMLElement).dataset.cat;
+          cards.forEach(card => {
+            const c = card as HTMLElement;
+            if (cat === 'all' || c.dataset.cat === cat) {
+              c.classList.remove('hidden');
+            } else {
+              c.classList.add('hidden');
+            }
+          });
+        });
       });
-    }
-  });
-</script>
+    });
+  </script>
+
 
 </Layout>
