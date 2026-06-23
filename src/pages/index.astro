@@ -5,20 +5,47 @@ import Layout from '../layouts/Layout.astro';
 <Layout>
 
   <!-- NAVIGATION -->
-  <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-4 border-b border-white/5" style="background:#0d0f14;">
-    <div class="text-white font-bold text-lg tracking-tight">
-      carlo<span style="color:#00d4aa">.</span>schluter
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/5" style="background:#0d0f14;">
+    <div class="flex items-center justify-between px-8 py-4">
+      <div class="text-white font-bold text-lg tracking-tight">
+        carlo<span style="color:#00d4aa">.</span>schluter
+      </div>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#about" class="text-sm text-[#8b909e] hover:text-white transition-colors">About</a>
+        <a href="#services" class="text-sm text-[#8b909e] hover:text-white transition-colors">Services</a>
+        <a href="#process" class="text-sm text-[#8b909e] hover:text-white transition-colors">Process</a>
+        <a href="#skills" class="text-sm text-[#8b909e] hover:text-white transition-colors">Skills</a>
+        <a href="#contact" class="text-sm text-[#8b909e] hover:text-white transition-colors">Contact</a>
+      </div>
+      <a href="#contact" class="hidden md:inline-flex text-sm font-semibold px-4 py-2 rounded-lg transition-colors" style="background:#00d4aa;color:#0d0f14;">
+        Let's talk
+      </a>
+
+      <!-- Mobile hamburger button -->
+      <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5" aria-label="Toggle menu">
+        <span class="hamburger-line" style="display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all 0.3s;"></span>
+        <span class="hamburger-line" style="display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all 0.3s;"></span>
+        <span class="hamburger-line" style="display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all 0.3s;"></span>
+      </button>
     </div>
-    <div class="hidden md:flex items-center gap-8">
-      <a href="#about" class="text-sm text-[#8b909e] hover:text-white transition-colors">About</a>
-      <a href="#services" class="text-sm text-[#8b909e] hover:text-white transition-colors">Services</a>
-      <a href="#process" class="text-sm text-[#8b909e] hover:text-white transition-colors">Process</a>
-      <a href="#skills" class="text-sm text-[#8b909e] hover:text-white transition-colors">Skills</a>
-      <a href="#contact" class="text-sm text-[#8b909e] hover:text-white transition-colors">Contact</a>
+
+    <!-- Mobile menu dropdown -->
+    <div id="mobile-menu" style="display:none;border-top:1px solid rgba(255,255,255,0.05);">
+      <div class="flex flex-col px-8 py-6 gap-1">
+        <a href="#about" class="mobile-nav-link text-sm text-[#8b909e] hover:text-white transition-colors py-3 border-b border-white/5">About</a>
+        <a href="#services" class="mobile-nav-link text-sm text-[#8b909e] hover:text-white transition-colors py-3 border-b border-white/5">Services</a>
+        <a href="#process" class="mobile-nav-link text-sm text-[#8b909e] hover:text-white transition-colors py-3 border-b border-white/5">Process</a>
+        <a href="#skills" class="mobile-nav-link text-sm text-[#8b909e] hover:text-white transition-colors py-3 border-b border-white/5">Skills</a>
+        <a href="#contact" class="mobile-nav-link text-sm text-[#8b909e] hover:text-white transition-colors py-3">Contact</a>
+        <div class="pt-4">
+          <a href="#contact" class="mobile-nav-link text-sm font-semibold px-6 py-3 rounded-lg transition-colors inline-block" style="background:#00d4aa;color:#0d0f14;">
+            Let's talk
+          </a>
+        </div>
+      </div>
     </div>
-    <a href="#contact" class="text-sm font-semibold px-4 py-2 rounded-lg transition-colors" style="background:#00d4aa;color:#0d0f14;">
-      Let's talk
-    </a>
   </nav>
 
   <!-- HERO -->
@@ -744,6 +771,42 @@ import Layout from '../layouts/Layout.astro';
       });
     });
   </script>
+
+  <script>
+    window.addEventListener('load', () => {
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      const lines = document.querySelectorAll('.hamburger-line') as NodeListOf<HTMLElement>;
+      let open = false;
+
+      btn?.addEventListener('click', () => {
+        open = !open;
+        if (menu) menu.style.display = open ? 'block' : 'none';
+
+        // Animate hamburger to X
+        if (open) {
+          lines[0].style.transform = 'translateY(7px) rotate(45deg)';
+          lines[1].style.opacity = '0';
+          lines[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+        } else {
+          lines[0].style.transform = 'none';
+          lines[1].style.opacity = '1';
+          lines[2].style.transform = 'none';
+        }
+      });
+
+      // Close menu when a link is clicked
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          open = false;
+          if (menu) menu.style.display = 'none';
+          lines[0].style.transform = 'none';
+          lines[1].style.opacity = '1';
+          lines[2].style.transform = 'none';
+        });
+      });
+    });
+  </script>  
 
 
 </Layout>
