@@ -77,19 +77,31 @@ import Layout from '../layouts/Layout.astro';
       </a>
     </div>
 
-    <div class="flex flex-wrap gap-12 pt-8 border-t border-white/5">
-      <div>
-        <div class="text-3xl font-bold text-white">25+</div>
-        <div class="text-sm text-[#8b909e] mt-1">Years engineering</div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-px mt-12 rounded-xl overflow-hidden border border-white/5">
+
+      <div class="flex flex-col items-center justify-center py-6 px-4 text-center" style="background:#131720;">
+        <div class="text-3xl font-bold text-white mb-1">25+</div>
+        <div class="text-xs text-[#8b909e] uppercase tracking-widest">Years engineering</div>
       </div>
-      <div>
-        <div class="text-3xl font-bold text-white">3</div>
-        <div class="text-sm text-[#8b909e] mt-1">AI specialisations</div>
+
+      <div class="flex flex-col items-center justify-center py-6 px-4 text-center" style="background:#131720;">
+        <div class="text-3xl font-bold mb-1" style="color:#00d4aa;">3</div>
+        <div class="text-xs text-[#8b909e] uppercase tracking-widest">AI specialisations</div>
       </div>
-      <div>
-        <div class="text-3xl font-bold" style="color:#00d4aa;">SA</div>
-        <div class="text-sm text-[#8b909e] mt-1">Based in Gauteng</div>
+
+      <div class="flex flex-col items-center justify-center py-6 px-4 text-center" style="background:#131720;">
+        <div class="text-3xl font-bold mb-1" style="color:#5b8dee;">10+</div>
+        <div class="text-xs text-[#8b909e] uppercase tracking-widest">Industries served</div>
       </div>
+
+      <div class="flex flex-col items-center justify-center py-6 px-4 text-center" style="background:#131720;">
+        <div class="flex items-center gap-2 mb-1">
+          <span class="w-2 h-2 rounded-full" style="background:#00d4aa;animation:pulse 2s infinite;"></span>
+          <div class="text-3xl font-bold" style="color:#EF9F27;">Open</div>
+        </div>
+        <div class="text-xs text-[#8b909e] uppercase tracking-widest">For projects</div>
+      </div>
+
     </div>
   </section>
 
@@ -214,6 +226,116 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- INDUSTRIES -->
+  <section class="py-24 px-8 max-w-6xl mx-auto border-t border-white/5">
+    <div class="text-xs font-semibold tracking-widest uppercase mb-4" style="color:#00d4aa;">Experience across industries</div>
+    <h2 class="text-3xl font-bold text-white mb-4">Industries I've worked in</h2>
+    <p class="text-[#8b909e] mb-12 max-w-xl">Over 25 years I've built production systems across a wide range of South African and international industries.</p>
+
+    <div class="grid gap-4" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr));">
+
+      <div class="industry-card p-5 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:rgba(0,212,170,0.1);">
+          <i class="ti ti-building-arch" style="color:#00d4aa;font-size:18px;"></i>
+        </div>
+        <div class="flex items-center gap-2 mb-2">
+          <h3 class="text-sm font-semibold text-white">Civil Engineering</h3>
+          <span class="text-xs px-2 py-0.5 rounded-full font-medium" style="background:rgba(0,212,170,0.1);color:#00d4aa;border:1px solid rgba(0,212,170,0.2);">Current</span>
+        </div>
+        <p class="text-xs text-[#8b909e] leading-relaxed">Enterprise project management platform for large-scale infrastructure</p>
+      </div>
+
+      <div class="industry-card p-5 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:rgba(91,141,238,0.1);">
+          <i class="ti ti-plant" style="color:#5b8dee;font-size:18px;"></i>
+        </div>
+        <h3 class="text-sm font-semibold text-white mb-2">Agriculture</h3>
+        <p class="text-xs text-[#8b909e] leading-relaxed">Real-time commodity pricing & mobile data platform for smallholder farmers</p>
+      </div>
+
+      <div class="industry-card p-5 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:rgba(239,159,39,0.1);">
+          <i class="ti ti-home" style="color:#EF9F27;font-size:18px;"></i>
+        </div>
+        <h3 class="text-sm font-semibold text-white mb-2">Real Estate</h3>
+        <p class="text-xs text-[#8b909e] leading-relaxed">CRM modules & campaign automation for agents across South Africa</p>
+      </div>
+
+      <div class="industry-card p-5 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:rgba(0,212,170,0.1);">
+          <i class="ti ti-car" style="color:#00d4aa;font-size:18px;"></i>
+        </div>
+        <h3 class="text-sm font-semibold text-white mb-2">Automotive</h3>
+        <p class="text-xs text-[#8b909e] leading-relaxed">Motor body repair financial system for Anglo African Finance</p>
+      </div>
+
+      <div class="industry-card p-5 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:rgba(91,141,238,0.1);">
+          <i class="ti ti-report-money" style="color:#5b8dee;font-size:18px;"></i>
+        </div>
+        <h3 class="text-sm font-semibold text-white mb-2">Financial Services</h3>
+        <p class="text-xs text-[#8b909e] leading-relaxed">Insurance policy systems & daily banking batch imports</p>
+      </div>
+
+      <div class="industry-card p-5 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:rgba(239,159,39,0.1);">
+          <i class="ti ti-music" style="color:#EF9F27;font-size:18px;"></i>
+        </div>
+        <h3 class="text-sm font-semibold text-white mb-2">Music & Entertainment</h3>
+        <p class="text-xs text-[#8b909e] leading-relaxed">Full e-commerce platform for digital audio track sales</p>
+      </div>
+
+      <div class="industry-card p-5 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:rgba(0,212,170,0.1);">
+          <i class="ti ti-heart-rate-monitor" style="color:#00d4aa;font-size:18px;"></i>
+        </div>
+        <h3 class="text-sm font-semibold text-white mb-2">Healthcare</h3>
+        <p class="text-xs text-[#8b909e] leading-relaxed">Medical aid claims processing & broker management systems</p>
+      </div>
+
+      <div class="industry-card p-5 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:rgba(91,141,238,0.1);">
+          <i class="ti ti-device-mobile" style="color:#5b8dee;font-size:18px;"></i>
+        </div>
+        <h3 class="text-sm font-semibold text-white mb-2">Telecommunications</h3>
+        <p class="text-xs text-[#8b909e] leading-relaxed">Facility management & biometric security systems for MTN</p>
+      </div>
+
+      <div class="industry-card p-5 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:rgba(239,159,39,0.1);">
+          <i class="ti ti-school" style="color:#EF9F27;font-size:18px;"></i>
+        </div>
+        <h3 class="text-sm font-semibold text-white mb-2">Education</h3>
+        <p class="text-xs text-[#8b909e] leading-relaxed">Student portals & university procurement reporting systems</p>
+      </div>
+
+      <div class="industry-card p-5 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:rgba(0,212,170,0.1);">
+          <i class="ti ti-shopping-cart" style="color:#00d4aa;font-size:18px;"></i>
+        </div>
+        <h3 class="text-sm font-semibold text-white mb-2">E-commerce & Retail</h3>
+        <p class="text-xs text-[#8b909e] leading-relaxed">Payment gateway integrations & custom online store platforms</p>
+      </div>
+
+      <div class="industry-card p-5 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:rgba(91,141,238,0.1);">
+          <i class="ti ti-scale" style="color:#5b8dee;font-size:18px;"></i>
+        </div>
+        <h3 class="text-sm font-semibold text-white mb-2">Legal & Debt</h3>
+        <p class="text-xs text-[#8b909e] leading-relaxed">Debt counselling web applications & document management</p>
+      </div>
+
+      <div class="industry-card p-5 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:rgba(239,159,39,0.1);">
+          <i class="ti ti-trophy" style="color:#EF9F27;font-size:18px;"></i>
+        </div>
+        <h3 class="text-sm font-semibold text-white mb-2">Sports & Events</h3>
+        <p class="text-xs text-[#8b909e] leading-relaxed">Sensor testing & systems work for 2010 FIFA World Cup venues</p>
+      </div>
+
+    </div>
+  </section>  
+
   <style>
     @keyframes rotatering {
       from { transform: rotate(0deg); }
@@ -232,6 +354,13 @@ import Layout from '../layouts/Layout.astro';
     html {
       scroll-behavior: smooth;
     }
+    .industry-card {
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .industry-card:hover {
+      border-color: rgba(0,212,170,0.25) !important;
+      transform: translateY(-2px);
+    }    
   </style>  
 
   <!-- SERVICES -->
