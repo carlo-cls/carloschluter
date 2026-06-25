@@ -230,107 +230,191 @@ import Layout from '../layouts/Layout.astro';
   <section class="py-24 px-8 max-w-6xl mx-auto border-t border-white/5">
     <div class="text-xs font-semibold tracking-widest uppercase mb-4" style="color:#00d4aa;">Experience across industries</div>
     <h2 class="text-3xl font-bold text-white mb-4">Industries I've worked in</h2>
-    <p class="text-[#8b909e] mb-12 max-w-xl">Over 25 years I've built production systems across a wide range of South African and international industries.</p>
+    <p class="text-[#8b909e] mb-12 max-w-xl">Over 25 years I've built production systems across a wide range of South African and international industries. Click any to learn more.</p>
 
-    <div class="grid gap-4" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr));">
+    <div class="grid md:grid-cols-2 gap-3" id="industries-grid">
 
-      <div class="industry-card p-5 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
-        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:rgba(0,212,170,0.1);">
-          <i class="ti ti-building-arch" style="color:#00d4aa;font-size:18px;"></i>
+      <div class="ind-item" data-open="true">
+        <div class="ind-header">
+          <div class="ind-left">
+            <div class="ind-icon" style="background:rgba(0,212,170,0.1);">
+              <i class="ti ti-building-arch" style="color:#00d4aa;font-size:16px;"></i>
+            </div>
+            <div>
+              <div class="ind-name">Civil Engineering</div>
+              <span class="ind-badge">Current</span>
+            </div>
+          </div>
+          <i class="ti ti-chevron-down ind-chevron"></i>
         </div>
-        <div class="flex items-center gap-2 mb-2">
-          <h3 class="text-sm font-semibold text-white">Civil Engineering</h3>
-          <span class="text-xs px-2 py-0.5 rounded-full font-medium" style="background:rgba(0,212,170,0.1);color:#00d4aa;border:1px solid rgba(0,212,170,0.2);">Current</span>
+        <div class="ind-body">
+          <p class="ind-desc">Enterprise project management platform for large-scale infrastructure</p>
         </div>
-        <p class="text-xs text-[#8b909e] leading-relaxed">Enterprise project management platform for large-scale infrastructure</p>
       </div>
 
-      <div class="industry-card p-5 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
-        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:rgba(91,141,238,0.1);">
-          <i class="ti ti-plant" style="color:#5b8dee;font-size:18px;"></i>
+      <div class="ind-item">
+        <div class="ind-header">
+          <div class="ind-left">
+            <div class="ind-icon" style="background:rgba(91,141,238,0.1);">
+              <i class="ti ti-plant" style="color:#5b8dee;font-size:16px;"></i>
+            </div>
+            <div class="ind-name">Agriculture</div>
+          </div>
+          <i class="ti ti-chevron-down ind-chevron"></i>
         </div>
-        <h3 class="text-sm font-semibold text-white mb-2">Agriculture</h3>
-        <p class="text-xs text-[#8b909e] leading-relaxed">Real-time commodity pricing & mobile data platform for smallholder farmers</p>
+        <div class="ind-body">
+          <p class="ind-desc">Real-time commodity pricing & mobile data platform for smallholder farmers across SA</p>
+        </div>
       </div>
 
-      <div class="industry-card p-5 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
-        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:rgba(239,159,39,0.1);">
-          <i class="ti ti-home" style="color:#EF9F27;font-size:18px;"></i>
+      <div class="ind-item">
+        <div class="ind-header">
+          <div class="ind-left">
+            <div class="ind-icon" style="background:rgba(239,159,39,0.1);">
+              <i class="ti ti-home" style="color:#EF9F27;font-size:16px;"></i>
+            </div>
+            <div class="ind-name">Real Estate</div>
+          </div>
+          <i class="ti ti-chevron-down ind-chevron"></i>
         </div>
-        <h3 class="text-sm font-semibold text-white mb-2">Real Estate</h3>
-        <p class="text-xs text-[#8b909e] leading-relaxed">CRM modules & campaign automation for agents across South Africa</p>
+        <div class="ind-body">
+          <p class="ind-desc">CRM modules & campaign automation for real estate agents across South Africa</p>
+        </div>
       </div>
 
-      <div class="industry-card p-5 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
-        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:rgba(0,212,170,0.1);">
-          <i class="ti ti-car" style="color:#00d4aa;font-size:18px;"></i>
+      <div class="ind-item">
+        <div class="ind-header">
+          <div class="ind-left">
+            <div class="ind-icon" style="background:rgba(0,212,170,0.1);">
+              <i class="ti ti-car" style="color:#00d4aa;font-size:16px;"></i>
+            </div>
+            <div class="ind-name">Automotive</div>
+          </div>
+          <i class="ti ti-chevron-down ind-chevron"></i>
         </div>
-        <h3 class="text-sm font-semibold text-white mb-2">Automotive</h3>
-        <p class="text-xs text-[#8b909e] leading-relaxed">Motor body repair financial system for Anglo African Finance</p>
+        <div class="ind-body">
+          <p class="ind-desc">Motor body repair financial system for Anglo African Finance</p>
+        </div>
       </div>
 
-      <div class="industry-card p-5 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
-        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:rgba(91,141,238,0.1);">
-          <i class="ti ti-report-money" style="color:#5b8dee;font-size:18px;"></i>
+      <div class="ind-item">
+        <div class="ind-header">
+          <div class="ind-left">
+            <div class="ind-icon" style="background:rgba(91,141,238,0.1);">
+              <i class="ti ti-report-money" style="color:#5b8dee;font-size:16px;"></i>
+            </div>
+            <div class="ind-name">Financial Services</div>
+          </div>
+          <i class="ti ti-chevron-down ind-chevron"></i>
         </div>
-        <h3 class="text-sm font-semibold text-white mb-2">Financial Services</h3>
-        <p class="text-xs text-[#8b909e] leading-relaxed">Insurance policy systems & daily banking batch imports</p>
+        <div class="ind-body">
+          <p class="ind-desc">Insurance policy systems & daily banking batch imports for major institutions</p>
+        </div>
       </div>
 
-      <div class="industry-card p-5 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
-        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:rgba(239,159,39,0.1);">
-          <i class="ti ti-music" style="color:#EF9F27;font-size:18px;"></i>
+      <div class="ind-item">
+        <div class="ind-header">
+          <div class="ind-left">
+            <div class="ind-icon" style="background:rgba(239,159,39,0.1);">
+              <i class="ti ti-music" style="color:#EF9F27;font-size:16px;"></i>
+            </div>
+            <div class="ind-name">Music & Entertainment</div>
+          </div>
+          <i class="ti ti-chevron-down ind-chevron"></i>
         </div>
-        <h3 class="text-sm font-semibold text-white mb-2">Music & Entertainment</h3>
-        <p class="text-xs text-[#8b909e] leading-relaxed">Full e-commerce platform for digital audio track sales</p>
+        <div class="ind-body">
+          <p class="ind-desc">Full e-commerce platform for digital audio track sales — 25% revenue increase</p>
+        </div>
       </div>
 
-      <div class="industry-card p-5 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
-        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:rgba(0,212,170,0.1);">
-          <i class="ti ti-heart-rate-monitor" style="color:#00d4aa;font-size:18px;"></i>
+      <div class="ind-item">
+        <div class="ind-header">
+          <div class="ind-left">
+            <div class="ind-icon" style="background:rgba(0,212,170,0.1);">
+              <i class="ti ti-heart-rate-monitor" style="color:#00d4aa;font-size:16px;"></i>
+            </div>
+            <div class="ind-name">Healthcare</div>
+          </div>
+          <i class="ti ti-chevron-down ind-chevron"></i>
         </div>
-        <h3 class="text-sm font-semibold text-white mb-2">Healthcare</h3>
-        <p class="text-xs text-[#8b909e] leading-relaxed">Medical aid claims processing & broker management systems</p>
+        <div class="ind-body">
+          <p class="ind-desc">Medical aid claims processing & broker management systems</p>
+        </div>
       </div>
 
-      <div class="industry-card p-5 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
-        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:rgba(91,141,238,0.1);">
-          <i class="ti ti-device-mobile" style="color:#5b8dee;font-size:18px;"></i>
+      <div class="ind-item">
+        <div class="ind-header">
+          <div class="ind-left">
+            <div class="ind-icon" style="background:rgba(91,141,238,0.1);">
+              <i class="ti ti-device-mobile" style="color:#5b8dee;font-size:16px;"></i>
+            </div>
+            <div class="ind-name">Telecommunications</div>
+          </div>
+          <i class="ti ti-chevron-down ind-chevron"></i>
         </div>
-        <h3 class="text-sm font-semibold text-white mb-2">Telecommunications</h3>
-        <p class="text-xs text-[#8b909e] leading-relaxed">Facility management & biometric security systems for MTN</p>
+        <div class="ind-body">
+          <p class="ind-desc">Facility management & biometric security systems for MTN</p>
+        </div>
       </div>
 
-      <div class="industry-card p-5 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
-        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:rgba(239,159,39,0.1);">
-          <i class="ti ti-school" style="color:#EF9F27;font-size:18px;"></i>
+      <div class="ind-item">
+        <div class="ind-header">
+          <div class="ind-left">
+            <div class="ind-icon" style="background:rgba(239,159,39,0.1);">
+              <i class="ti ti-school" style="color:#EF9F27;font-size:16px;"></i>
+            </div>
+            <div class="ind-name">Education</div>
+          </div>
+          <i class="ti ti-chevron-down ind-chevron"></i>
         </div>
-        <h3 class="text-sm font-semibold text-white mb-2">Education</h3>
-        <p class="text-xs text-[#8b909e] leading-relaxed">Student portals & university procurement reporting systems</p>
+        <div class="ind-body">
+          <p class="ind-desc">Student portals & university procurement reporting systems</p>
+        </div>
       </div>
 
-      <div class="industry-card p-5 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
-        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:rgba(0,212,170,0.1);">
-          <i class="ti ti-shopping-cart" style="color:#00d4aa;font-size:18px;"></i>
+      <div class="ind-item">
+        <div class="ind-header">
+          <div class="ind-left">
+            <div class="ind-icon" style="background:rgba(0,212,170,0.1);">
+              <i class="ti ti-shopping-cart" style="color:#00d4aa;font-size:16px;"></i>
+            </div>
+            <div class="ind-name">E-commerce & Retail</div>
+          </div>
+          <i class="ti ti-chevron-down ind-chevron"></i>
         </div>
-        <h3 class="text-sm font-semibold text-white mb-2">E-commerce & Retail</h3>
-        <p class="text-xs text-[#8b909e] leading-relaxed">Payment gateway integrations & custom online store platforms</p>
+        <div class="ind-body">
+          <p class="ind-desc">Payment gateway integrations & custom online store platforms</p>
+        </div>
       </div>
 
-      <div class="industry-card p-5 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
-        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:rgba(91,141,238,0.1);">
-          <i class="ti ti-scale" style="color:#5b8dee;font-size:18px;"></i>
+      <div class="ind-item">
+        <div class="ind-header">
+          <div class="ind-left">
+            <div class="ind-icon" style="background:rgba(91,141,238,0.1);">
+              <i class="ti ti-scale" style="color:#5b8dee;font-size:16px;"></i>
+            </div>
+            <div class="ind-name">Legal & Debt</div>
+          </div>
+          <i class="ti ti-chevron-down ind-chevron"></i>
         </div>
-        <h3 class="text-sm font-semibold text-white mb-2">Legal & Debt</h3>
-        <p class="text-xs text-[#8b909e] leading-relaxed">Debt counselling web applications & document management</p>
+        <div class="ind-body">
+          <p class="ind-desc">Debt counselling web applications & document management systems</p>
+        </div>
       </div>
 
-      <div class="industry-card p-5 rounded-xl border" style="background:#131720;border-color:rgba(255,255,255,0.07);">
-        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:rgba(239,159,39,0.1);">
-          <i class="ti ti-trophy" style="color:#EF9F27;font-size:18px;"></i>
+      <div class="ind-item">
+        <div class="ind-header">
+          <div class="ind-left">
+            <div class="ind-icon" style="background:rgba(239,159,39,0.1);">
+              <i class="ti ti-trophy" style="color:#EF9F27;font-size:16px;"></i>
+            </div>
+            <div class="ind-name">Sports & Events</div>
+          </div>
+          <i class="ti ti-chevron-down ind-chevron"></i>
         </div>
-        <h3 class="text-sm font-semibold text-white mb-2">Sports & Events</h3>
-        <p class="text-xs text-[#8b909e] leading-relaxed">Sensor testing & systems work for 2010 FIFA World Cup venues</p>
+        <div class="ind-body">
+          <p class="ind-desc">Sensor testing & systems work for 2010 FIFA World Cup venues</p>
+        </div>
       </div>
 
     </div>
@@ -360,30 +444,196 @@ import Layout from '../layouts/Layout.astro';
     .industry-card:hover {
       border-color: rgba(0,212,170,0.25) !important;
       transform: translateY(-2px);
+    }
+    .ind-item {
+      background: #131720;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .ind-item[data-open="true"] {
+      border-color: rgba(0,212,170,0.35);
+    }
+    .ind-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+      cursor: pointer;
+      gap: 10px;
+      user-select: none;
+    }
+    .ind-header:hover {
+      background: rgba(255,255,255,0.02);
+    }
+    .ind-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .ind-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .ind-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: #e8eaf0;
+    }
+    .ind-badge {
+      font-size: 9px;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 10px;
+      background: rgba(0,212,170,0.1);
+      color: #00d4aa;
+      border: 1px solid rgba(0,212,170,0.2);
+      display: inline-block;
+      margin-top: 3px;
+    }
+    .ind-chevron {
+      font-size: 14px;
+      color: #555a6b;
+      transition: transform 0.25s;
+      flex-shrink: 0;
+    }
+    .ind-item[data-open="true"] .ind-chevron {
+      transform: rotate(180deg);
+    }
+    .ind-body {
+      display: none;
+      padding: 0 14px 12px 56px;
+    }
+    .ind-item[data-open="true"] .ind-body {
+      display: block;
+    }
+    .ind-desc {
+      font-size: 12px;
+      color: #8b909e;
+      line-height: 1.6;
+    }    
+    .svc-flip {
+      height: 320px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+    .svc-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.5s ease;
+    }
+    .svc-flip:hover .svc-inner {
+      transform: rotateY(180deg);
+    }
+    .svc-front, .svc-back {
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      padding: 28px;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .svc-front {
+      background: #131720;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+    .svc-back {
+      background: #0d0f14;
+      border: 1px solid;
+      transform: rotateY(180deg);
     }    
   </style>  
 
   <!-- SERVICES -->
   <section id="services" class="py-24 px-8 max-w-6xl mx-auto">
     <div class="text-xs font-semibold tracking-widest uppercase mb-4" style="color:#00d4aa;">What I build</div>
-    <h2 class="text-3xl font-bold text-white mb-12">AI solutions for real business problems</h2>
+    <h2 class="text-3xl font-bold text-white mb-4">AI solutions for real business problems</h2>
+    <p class="text-[#8b909e] mb-12 max-w-xl">Hover or tap any service to see what's included and who it's for.</p>
 
     <div class="grid md:grid-cols-3 gap-6">
-      <div class="p-6 rounded-xl border transition-colors hover:border-[#00d4aa]/30" style="background:#131720;border-color:rgba(255,255,255,0.07);">
-        <i class="ti ti-brain text-2xl mb-4 block" style="color:#00d4aa;"></i>
-        <h3 class="font-semibold text-white mb-3">AI Web Solutions</h3>
-        <p class="text-sm text-[#8b909e] leading-relaxed">Intelligent apps, chatbots, smart search, and automation built directly into your web presence.</p>
+
+      <div class="svc-flip">
+        <div class="svc-inner">
+          <div class="svc-front">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(0,212,170,0.1);">
+              <i class="ti ti-brain" style="color:#00d4aa;font-size:24px;"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-white mb-3">AI Web Solutions</h3>
+            <p class="text-sm text-[#8b909e] leading-relaxed">Intelligent apps, chatbots, smart search, and automation built directly into your web presence.</p>
+            <div class="mt-6 text-xs font-medium" style="color:#00d4aa;">Hover to see what's included →</div>
+          </div>
+          <div class="svc-back" style="border-color:rgba(0,212,170,0.3);">
+            <div class="text-xs font-semibold tracking-widest uppercase mb-4" style="color:#00d4aa;">What's included</div>
+            <ul class="flex flex-col gap-2 mb-5">
+              <li class="flex items-start gap-2 text-sm text-[#c8cad4]"><i class="ti ti-check flex-shrink-0 mt-0.5" style="color:#00d4aa;font-size:14px;"></i>Custom AI chat assistants</li>
+              <li class="flex items-start gap-2 text-sm text-[#c8cad4]"><i class="ti ti-check flex-shrink-0 mt-0.5" style="color:#00d4aa;font-size:14px;"></i>Intelligent search & recommendations</li>
+              <li class="flex items-start gap-2 text-sm text-[#c8cad4]"><i class="ti ti-check flex-shrink-0 mt-0.5" style="color:#00d4aa;font-size:14px;"></i>Document Q&A systems (RAG)</li>
+              <li class="flex items-start gap-2 text-sm text-[#c8cad4]"><i class="ti ti-check flex-shrink-0 mt-0.5" style="color:#00d4aa;font-size:14px;"></i>Workflow automation pipelines</li>
+            </ul>
+            <div class="text-xs font-semibold tracking-widest uppercase mb-2" style="color:#555a6b;">Best for</div>
+            <p class="text-xs text-[#8b909e]">Businesses wanting to add AI capability to their existing web presence</p>
+          </div>
+        </div>
       </div>
-      <div class="p-6 rounded-xl border transition-colors hover:border-[#5b8dee]/30" style="background:#131720;border-color:rgba(255,255,255,0.07);">
-        <i class="ti ti-speakerphone text-2xl mb-4 block" style="color:#5b8dee;"></i>
-        <h3 class="font-semibold text-white mb-3">AI Marketing Systems</h3>
-        <p class="text-sm text-[#8b909e] leading-relaxed">Content automation, social media AI, ad copy generation, and campaign intelligence at scale.</p>
+
+      <div class="svc-flip">
+        <div class="svc-inner">
+          <div class="svc-front">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(91,141,238,0.1);">
+              <i class="ti ti-speakerphone" style="color:#5b8dee;font-size:24px;"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-white mb-3">AI Marketing Systems</h3>
+            <p class="text-sm text-[#8b909e] leading-relaxed">Content automation, social media AI, ad copy generation, and campaign intelligence at scale.</p>
+            <div class="mt-6 text-xs font-medium" style="color:#5b8dee;">Hover to see what's included →</div>
+          </div>
+          <div class="svc-back" style="border-color:rgba(91,141,238,0.3);">
+            <div class="text-xs font-semibold tracking-widest uppercase mb-4" style="color:#5b8dee;">What's included</div>
+            <ul class="flex flex-col gap-2 mb-5">
+              <li class="flex items-start gap-2 text-sm text-[#c8cad4]"><i class="ti ti-check flex-shrink-0 mt-0.5" style="color:#5b8dee;font-size:14px;"></i>AI content generation pipelines</li>
+              <li class="flex items-start gap-2 text-sm text-[#c8cad4]"><i class="ti ti-check flex-shrink-0 mt-0.5" style="color:#5b8dee;font-size:14px;"></i>Social media automation systems</li>
+              <li class="flex items-start gap-2 text-sm text-[#c8cad4]"><i class="ti ti-check flex-shrink-0 mt-0.5" style="color:#5b8dee;font-size:14px;"></i>Ad copy & campaign variation testing</li>
+              <li class="flex items-start gap-2 text-sm text-[#c8cad4]"><i class="ti ti-check flex-shrink-0 mt-0.5" style="color:#5b8dee;font-size:14px;"></i>Brand voice prompt systems</li>
+            </ul>
+            <div class="text-xs font-semibold tracking-widest uppercase mb-2" style="color:#555a6b;">Best for</div>
+            <p class="text-xs text-[#8b909e]">Marketing agencies and businesses needing high-volume content at scale</p>
+          </div>
+        </div>
       </div>
-      <div class="p-6 rounded-xl border transition-colors hover:border-[#EF9F27]/30" style="background:#131720;border-color:rgba(255,255,255,0.07);">
-        <i class="ti ti-rocket text-2xl mb-4 block" style="color:#EF9F27;"></i>
-        <h3 class="font-semibold text-white mb-3">SaaS AI Integration</h3>
-        <p class="text-sm text-[#8b909e] leading-relaxed">Embed AI features into your product — prompt pipelines, RAG systems, and agentic workflows.</p>
+
+      <div class="svc-flip">
+        <div class="svc-inner">
+          <div class="svc-front">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(239,159,39,0.1);">
+              <i class="ti ti-rocket" style="color:#EF9F27;font-size:24px;"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-white mb-3">SaaS AI Integration</h3>
+            <p class="text-sm text-[#8b909e] leading-relaxed">Embed AI features into your product — prompt pipelines, RAG systems, and agentic workflows.</p>
+            <div class="mt-6 text-xs font-medium" style="color:#EF9F27;">Hover to see what's included →</div>
+          </div>
+          <div class="svc-back" style="border-color:rgba(239,159,39,0.3);">
+            <div class="text-xs font-semibold tracking-widest uppercase mb-4" style="color:#EF9F27;">What's included</div>
+            <ul class="flex flex-col gap-2 mb-5">
+              <li class="flex items-start gap-2 text-sm text-[#c8cad4]"><i class="ti ti-check flex-shrink-0 mt-0.5" style="color:#EF9F27;font-size:14px;"></i>AI feature scoping & architecture</li>
+              <li class="flex items-start gap-2 text-sm text-[#c8cad4]"><i class="ti ti-check flex-shrink-0 mt-0.5" style="color:#EF9F27;font-size:14px;"></i>LLM API integration & prompt systems</li>
+              <li class="flex items-start gap-2 text-sm text-[#c8cad4]"><i class="ti ti-check flex-shrink-0 mt-0.5" style="color:#EF9F27;font-size:14px;"></i>Agentic workflow design & build</li>
+              <li class="flex items-start gap-2 text-sm text-[#c8cad4]"><i class="ti ti-check flex-shrink-0 mt-0.5" style="color:#EF9F27;font-size:14px;"></i>Deployment, monitoring & handover</li>
+            </ul>
+            <div class="text-xs font-semibold tracking-widest uppercase mb-2" style="color:#555a6b;">Best for</div>
+            <p class="text-xs text-[#8b909e]">SaaS startups and development houses wanting to ship AI-powered features</p>
+          </div>
+        </div>
       </div>
+
     </div>
   </section>
 
@@ -444,10 +694,10 @@ import Layout from '../layouts/Layout.astro';
   <section id="skills" class="py-24 px-8 max-w-6xl mx-auto border-t border-white/5">
     <div class="text-xs font-semibold tracking-widest uppercase mb-4" style="color:#00d4aa;">Tech stack</div>
     <h2 class="text-3xl font-bold text-white mb-4">Tools & technologies</h2>
-    <p class="text-[#8b909e] mb-10 max-w-xl">Hover any skill to see what I actually do with it. Filter by category to find what's relevant to you.</p>
+    <p class="text-[#8b909e] mb-10 max-w-xl">Filter by category then tap any skill to see what I use it for.</p>
 
     <!-- Category tabs -->
-    <div class="flex flex-wrap gap-3 mb-10" id="skill-tabs">
+    <div class="flex flex-wrap gap-3 mb-8" id="skill-tabs">
       <button class="skill-tab active" data-cat="all">All</button>
       <button class="skill-tab" data-cat="ai">AI & ML</button>
       <button class="skill-tab" data-cat="backend">Backend</button>
@@ -455,237 +705,63 @@ import Layout from '../layouts/Layout.astro';
       <button class="skill-tab" data-cat="tools">Tools</button>
     </div>
 
-    <!-- Flip card grid -->
-    <div class="grid gap-4" style="grid-template-columns:repeat(auto-fill,minmax(160px,1fr));" id="skills-grid">
+    <!-- Pills -->
+    <div class="flex flex-wrap gap-2 mb-8" id="skills-pills"></div>
 
-      <!-- AI & ML -->
-      <div class="skill-card" data-cat="ai">
-        <div class="flip-inner">
-          <div class="flip-front"><i class="ti ti-wand" style="color:#00d4aa;font-size:20px;margin-bottom:6px;display:block;"></i>Prompt Engineering</div>
-          <div class="flip-back" style="border-color:rgba(0,212,170,0.3);color:#00d4aa;">Designing reliable prompt systems, eval frameworks & production LLM pipelines</div>
+    <!-- Detail panel -->
+    <div id="skills-detail" class="p-5 rounded-xl border transition-colors" style="background:#131720;border-color:rgba(255,255,255,0.07);min-height:80px;">
+      <div id="skills-empty" class="text-sm text-center py-4" style="color:#555a6b;">Click any skill to see details</div>
+      <div id="skills-content" style="display:none;">
+        <div class="flex items-center gap-3 mb-3">
+          <div id="skills-icon" class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"></div>
+          <div>
+            <div id="skills-name" class="text-sm font-semibold"></div>
+            <div id="skills-cat" class="text-xs font-semibold uppercase tracking-wider opacity-70"></div>
+          </div>
         </div>
+        <p id="skills-desc" class="text-sm leading-relaxed" style="color:#8b909e;"></p>
       </div>
-
-      <div class="skill-card" data-cat="ai">
-        <div class="flip-inner">
-          <div class="flip-front"><i class="ti ti-robot" style="color:#00d4aa;font-size:20px;margin-bottom:6px;display:block;"></i>Claude API</div>
-          <div class="flip-back" style="border-color:rgba(0,212,170,0.3);color:#00d4aa;">Anthropic API integration, tool use, streaming & multi-turn conversations</div>
-        </div>
-      </div>
-
-      <div class="skill-card" data-cat="ai">
-        <div class="flip-inner">
-          <div class="flip-front"><i class="ti ti-link" style="color:#00d4aa;font-size:20px;margin-bottom:6px;display:block;"></i>LangChain</div>
-          <div class="flip-back" style="border-color:rgba(0,212,170,0.3);color:#00d4aa;">AI pipeline orchestration, chaining, agents & memory management</div>
-        </div>
-      </div>
-
-      <div class="skill-card" data-cat="ai">
-        <div class="flip-inner">
-          <div class="flip-front"><i class="ti ti-database" style="color:#00d4aa;font-size:20px;margin-bottom:6px;display:block;"></i>RAG Systems</div>
-          <div class="flip-back" style="border-color:rgba(0,212,170,0.3);color:#00d4aa;">Vector databases, embeddings, retrieval tuning & document Q&A systems</div>
-        </div>
-      </div>
-
-      <div class="skill-card" data-cat="ai">
-        <div class="flip-inner">
-          <div class="flip-front"><i class="ti ti-cpu" style="color:#00d4aa;font-size:20px;margin-bottom:6px;display:block;"></i>OpenAI API</div>
-          <div class="flip-back" style="border-color:rgba(0,212,170,0.3);color:#00d4aa;">GPT-4 integration, function calling & AI feature development</div>
-        </div>
-      </div>
-
-      <!-- Backend -->
-      <div class="skill-card" data-cat="backend">
-        <div class="flip-inner">
-          <div class="flip-front"><i class="ti ti-coffee" style="color:#5b8dee;font-size:20px;margin-bottom:6px;display:block;"></i>Java</div>
-          <div class="flip-back" style="border-color:rgba(91,141,238,0.3);color:#5b8dee;">25+ years building enterprise applications, APIs & complex business logic</div>
-        </div>
-      </div>
-
-      <div class="skill-card" data-cat="backend">
-        <div class="flip-inner">
-          <div class="flip-front"><i class="ti ti-leaf" style="color:#5b8dee;font-size:20px;margin-bottom:6px;display:block;"></i>Spring Boot</div>
-          <div class="flip-back" style="border-color:rgba(91,141,238,0.3);color:#5b8dee;">REST APIs, security, JPA, dependency injection & microservices</div>
-        </div>
-      </div>
-
-      <div class="skill-card" data-cat="backend">
-        <div class="flip-inner">
-          <div class="flip-front"><i class="ti ti-database" style="color:#5b8dee;font-size:20px;margin-bottom:6px;display:block;"></i>MySQL</div>
-          <div class="flip-back" style="border-color:rgba(91,141,238,0.3);color:#5b8dee;">Complex stored procedures, views, query optimisation & schema design</div>
-        </div>
-      </div>
-
-      <div class="skill-card" data-cat="backend">
-        <div class="flip-inner">
-          <div class="flip-front"><i class="ti ti-brand-nodejs" style="color:#5b8dee;font-size:20px;margin-bottom:6px;display:block;"></i>Node.js</div>
-          <div class="flip-back" style="border-color:rgba(91,141,238,0.3);color:#5b8dee;">REST APIs, serverless functions & real-time backend services</div>
-        </div>
-      </div>
-
-      <div class="skill-card" data-cat="backend">
-        <div class="flip-inner">
-          <div class="flip-front"><i class="ti ti-brand-php" style="color:#5b8dee;font-size:20px;margin-bottom:6px;display:block;"></i>PHP</div>
-          <div class="flip-back" style="border-color:rgba(91,141,238,0.3);color:#5b8dee;">Custom web applications, WordPress development & MySQL integration</div>
-        </div>
-      </div>
-
-      <!-- Frontend -->
-      <div class="skill-card" data-cat="frontend">
-        <div class="flip-inner">
-          <div class="flip-front"><i class="ti ti-brand-javascript" style="color:#EF9F27;font-size:20px;margin-bottom:6px;display:block;"></i>JavaScript</div>
-          <div class="flip-back" style="border-color:rgba(239,159,39,0.3);color:#EF9F27;">ES6+, async/await, DOM manipulation & interactive UI development</div>
-        </div>
-      </div>
-
-      <div class="skill-card" data-cat="frontend">
-        <div class="flip-inner">
-          <div class="flip-front"><i class="ti ti-brand-bootstrap" style="color:#EF9F27;font-size:20px;margin-bottom:6px;display:block;"></i>Bootstrap</div>
-          <div class="flip-back" style="border-color:rgba(239,159,39,0.3);color:#EF9F27;">Responsive layouts, component systems & enterprise UI development</div>
-        </div>
-      </div>
-
-      <div class="skill-card" data-cat="frontend">
-        <div class="flip-inner">
-          <div class="flip-front"><i class="ti ti-brand-tailwind" style="color:#EF9F27;font-size:20px;margin-bottom:6px;display:block;"></i>Tailwind CSS</div>
-          <div class="flip-back" style="border-color:rgba(239,159,39,0.3);color:#EF9F27;">Utility-first styling, custom design systems & responsive components</div>
-        </div>
-      </div>
-
-      <div class="skill-card" data-cat="frontend">
-        <div class="flip-inner">
-          <div class="flip-front"><i class="ti ti-brand-jquery" style="color:#EF9F27;font-size:20px;margin-bottom:6px;display:block;"></i>jQuery</div>
-          <div class="flip-back" style="border-color:rgba(239,159,39,0.3);color:#EF9F27;">DOM manipulation, AJAX, DataTables & interactive UI components</div>
-        </div>
-      </div>
-
-      <div class="skill-card" data-cat="frontend">
-        <div class="flip-inner">
-          <div class="flip-front"><i class="ti ti-rocket" style="color:#EF9F27;font-size:20px;margin-bottom:6px;display:block;"></i>Astro</div>
-          <div class="flip-back" style="border-color:rgba(239,159,39,0.3);color:#EF9F27;">Static site generation, component islands & modern web performance</div>
-        </div>
-      </div>
-
-      <!-- Tools -->
-      <div class="skill-card" data-cat="tools">
-        <div class="flip-inner">
-          <div class="flip-front"><i class="ti ti-brand-git" style="color:#8b909e;font-size:20px;margin-bottom:6px;display:block;"></i>Git</div>
-          <div class="flip-back" style="border-color:rgba(255,255,255,0.15);color:#a0a8b0;">Branching strategies, pull requests, Bitbucket & GitHub workflows</div>
-        </div>
-      </div>
-
-      <div class="skill-card" data-cat="tools">
-        <div class="flip-inner">
-          <div class="flip-front"><i class="ti ti-brand-vscode" style="color:#8b909e;font-size:20px;margin-bottom:6px;display:block;"></i>VS Code</div>
-          <div class="flip-back" style="border-color:rgba(255,255,255,0.15);color:#a0a8b0;">Primary IDE with extensions for AI-assisted development</div>
-        </div>
-      </div>
-
-      <div class="skill-card" data-cat="tools">
-        <div class="flip-inner">
-          <div class="flip-front"><i class="ti ti-world" style="color:#8b909e;font-size:20px;margin-bottom:6px;display:block;"></i>Netlify</div>
-          <div class="flip-back" style="border-color:rgba(255,255,255,0.15);color:#a0a8b0;">CI/CD deployment, serverless functions & edge hosting</div>
-        </div>
-      </div>
-
-      <div class="skill-card" data-cat="tools">
-        <div class="flip-inner">
-          <div class="flip-front"><i class="ti ti-server" style="color:#8b909e;font-size:20px;margin-bottom:6px;display:block;"></i>Nginx</div>
-          <div class="flip-back" style="border-color:rgba(255,255,255,0.15);color:#a0a8b0;">VPS configuration, reverse proxy, SSL & production server management</div>
-        </div>
-      </div>
-
-      <div class="skill-card" data-cat="tools">
-        <div class="flip-inner">
-          <div class="flip-front"><i class="ti ti-git-branch" style="color:#8b909e;font-size:20px;margin-bottom:6px;display:block;"></i>Bitbucket</div>
-          <div class="flip-back" style="border-color:rgba(255,255,255,0.15);color:#a0a8b0;">Git repository management, pull requests & team code collaboration</div>
-        </div>
-      </div>
-
-      <div class="skill-card" data-cat="tools">
-        <div class="flip-inner">
-          <div class="flip-front"><i class="ti ti-api" style="color:#8b909e;font-size:20px;margin-bottom:6px;display:block;"></i>Postman</div>
-          <div class="flip-back" style="border-color:rgba(255,255,255,0.15);color:#a0a8b0;">REST API testing, collections & automated endpoint validation</div>
-        </div>
-      </div>
-
-      <div class="skill-card" data-cat="tools">
-        <div class="flip-inner">
-          <div class="flip-front"><i class="ti ti-file-report" style="color:#8b909e;font-size:20px;margin-bottom:6px;display:block;"></i>JasperReports</div>
-          <div class="flip-back" style="border-color:rgba(255,255,255,0.15);color:#a0a8b0;">Enterprise reporting, PDF generation & complex data visualisation</div>
-        </div>
-      </div>      
-
     </div>
   </section>
 
   <style>
-    .skill-tab {
-      padding: 6px 16px;
-      border-radius: 20px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: transparent;
-      color: #8b909e;
-      font-size: 13px;
-      cursor: pointer;
-      transition: all 0.15s;
-      font-family: 'Space Grotesk', sans-serif;
-    }
-    .skill-tab:hover {
-      border-color: rgba(255,255,255,0.2);
-      color: #fff;
-    }
-    .skill-tab.active {
-      background: rgba(0,212,170,0.1);
-      border-color: rgba(0,212,170,0.35);
-      color: #00d4aa;
-    }
-    .skill-card {
-      height: 100px;
-      perspective: 800px;
-      cursor: pointer;
-    }
-    .flip-inner {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      transform-style: preserve-3d;
-      transition: transform 0.45s ease;
-    }
-    .skill-card:hover .flip-inner {
-      transform: rotateY(180deg);
-    }
-    .flip-front, .flip-back {
-      position: absolute;
-      inset: 0;
-      border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      backface-visibility: hidden;
-      padding: 12px;
-      text-align: center;
-      font-size: 13px;
-      font-weight: 500;
-    }
-    .flip-front {
-      background: #131720;
-      border: 1px solid rgba(255,255,255,0.07);
-      color: #e8eaf0;
-    }
-    .flip-back {
-      background: #0d0f14;
-      border: 1px solid;
-      color: #00d4aa;
-      transform: rotateY(180deg);
-      font-size: 11px;
-      font-weight: 400;
-      line-height: 1.5;
-    }
-    .skill-card.hidden {
-      display: none;
-    }
+  .skill-tab {
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: transparent;
+    color: #8b909e;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .skill-tab:hover {
+    border-color: rgba(255,255,255,0.2);
+    color: #fff;
+  }
+  .skill-tab.active {
+    background: rgba(0,212,170,0.1);
+    border-color: rgba(0,212,170,0.35);
+    color: #00d4aa;
+  }
+  .skill-pill {
+    font-size: 13px !important;
+    padding: 6px 14px !important;
+    border-radius: 8px !important;
+    border: 1px solid !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    transition: all 0.15s !important;
+    font-family: 'Space Grotesk', sans-serif !important;
+    text-decoration: none !important;
+    line-height: 1 !important;
+  }
+  .skill-pill.selected {
+    box-shadow: 0 0 0 2px currentColor !important;
+  }
   </style>
 
   <!-- ROADMAP -->
@@ -1046,26 +1122,102 @@ import Layout from '../layouts/Layout.astro';
   </script>
 
   <script>
-    window.addEventListener('load', () => {
-      const tabs = document.querySelectorAll('.skill-tab');
-      const cards = document.querySelectorAll('.skill-card');
+  window.addEventListener('load', () => {
+    const skills = [
+      {name:'Prompt Engineering',cat:'ai',catLabel:'AI & ML',icon:'ti-wand',color:'#00d4aa',bg:'rgba(0,212,170,0.08)',border:'rgba(0,212,170,0.3)',desc:'Designing reliable prompt systems, chain-of-thought reasoning, structured outputs and production LLM evaluation frameworks'},
+      {name:'Claude API',cat:'ai',catLabel:'AI & ML',icon:'ti-robot',color:'#00d4aa',bg:'rgba(0,212,170,0.08)',border:'rgba(0,212,170,0.3)',desc:'Anthropic API integration, tool use, streaming responses, multi-turn conversations and cost optimisation'},
+      {name:'LangChain',cat:'ai',catLabel:'AI & ML',icon:'ti-link',color:'#00d4aa',bg:'rgba(0,212,170,0.08)',border:'rgba(0,212,170,0.3)',desc:'AI pipeline orchestration, chaining, agents, memory management and retrieval integration'},
+      {name:'RAG Systems',cat:'ai',catLabel:'AI & ML',icon:'ti-database',color:'#00d4aa',bg:'rgba(0,212,170,0.08)',border:'rgba(0,212,170,0.3)',desc:'Vector databases, embeddings, retrieval quality tuning, hybrid search and document Q&A systems'},
+      {name:'OpenAI API',cat:'ai',catLabel:'AI & ML',icon:'ti-cpu',color:'#00d4aa',bg:'rgba(0,212,170,0.08)',border:'rgba(0,212,170,0.3)',desc:'GPT-4 integration, function calling and AI feature development'},
+      {name:'Java',cat:'backend',catLabel:'Backend',icon:'ti-coffee',color:'#5b8dee',bg:'rgba(91,141,238,0.08)',border:'rgba(91,141,238,0.3)',desc:'25+ years building enterprise applications, APIs and complex business logic across multiple industries'},
+      {name:'Spring Boot',cat:'backend',catLabel:'Backend',icon:'ti-leaf',color:'#5b8dee',bg:'rgba(91,141,238,0.08)',border:'rgba(91,141,238,0.3)',desc:'REST APIs, Spring Security, JPA/Hibernate, dependency injection and microservice architecture'},
+      {name:'MySQL',cat:'backend',catLabel:'Backend',icon:'ti-database',color:'#5b8dee',bg:'rgba(91,141,238,0.08)',border:'rgba(91,141,238,0.3)',desc:'Complex stored procedures, views, query optimisation, schema design and performance tuning'},
+      {name:'Node.js',cat:'backend',catLabel:'Backend',icon:'ti-brand-nodejs',color:'#5b8dee',bg:'rgba(91,141,238,0.08)',border:'rgba(91,141,238,0.3)',desc:'REST APIs, serverless functions, real-time backend services and Express middleware'},
+      {name:'PHP',cat:'backend',catLabel:'Backend',icon:'ti-brand-php',color:'#5b8dee',bg:'rgba(91,141,238,0.08)',border:'rgba(91,141,238,0.3)',desc:'Custom web applications, WordPress development and MySQL integration'},
+      {name:'JavaScript',cat:'frontend',catLabel:'Frontend',icon:'ti-brand-javascript',color:'#EF9F27',bg:'rgba(239,159,39,0.08)',border:'rgba(239,159,39,0.3)',desc:'ES6+, async/await, DOM manipulation, AJAX and interactive UI development across multiple frameworks'},
+      {name:'Bootstrap',cat:'frontend',catLabel:'Frontend',icon:'ti-brand-bootstrap',color:'#EF9F27',bg:'rgba(239,159,39,0.08)',border:'rgba(239,159,39,0.3)',desc:'Responsive layouts, component systems and enterprise UI development'},
+      {name:'Tailwind CSS',cat:'frontend',catLabel:'Frontend',icon:'ti-brand-tailwind',color:'#EF9F27',bg:'rgba(239,159,39,0.08)',border:'rgba(239,159,39,0.3)',desc:'Utility-first styling, custom design systems and responsive components'},
+      {name:'jQuery',cat:'frontend',catLabel:'Frontend',icon:'ti-code',color:'#EF9F27',bg:'rgba(239,159,39,0.08)',border:'rgba(239,159,39,0.3)',desc:'DOM manipulation, AJAX, DataTables, jsTree and interactive UI components'},
+      {name:'Astro',cat:'frontend',catLabel:'Frontend',icon:'ti-rocket',color:'#EF9F27',bg:'rgba(239,159,39,0.08)',border:'rgba(239,159,39,0.3)',desc:'Static site generation, component islands and modern web performance optimisation'},
+      {name:'Git',cat:'tools',catLabel:'Tools',icon:'ti-brand-git',color:'#a0a8b0',bg:'rgba(255,255,255,0.05)',border:'rgba(255,255,255,0.12)',desc:'Branching strategies, pull requests, Bitbucket and GitHub workflows'},
+      {name:'VS Code',cat:'tools',catLabel:'Tools',icon:'ti-brand-vscode',color:'#a0a8b0',bg:'rgba(255,255,255,0.05)',border:'rgba(255,255,255,0.12)',desc:'Primary IDE with extensions for AI-assisted development'},
+      {name:'Netlify',cat:'tools',catLabel:'Tools',icon:'ti-world',color:'#a0a8b0',bg:'rgba(255,255,255,0.05)',border:'rgba(255,255,255,0.12)',desc:'CI/CD deployment, serverless functions and edge hosting'},
+      {name:'Nginx',cat:'tools',catLabel:'Tools',icon:'ti-server',color:'#a0a8b0',bg:'rgba(255,255,255,0.05)',border:'rgba(255,255,255,0.12)',desc:'VPS configuration, reverse proxy, SSL and production server management'},
+      {name:'Bitbucket',cat:'tools',catLabel:'Tools',icon:'ti-git-branch',color:'#a0a8b0',bg:'rgba(255,255,255,0.05)',border:'rgba(255,255,255,0.12)',desc:'Git repository management, pull requests and team code collaboration'},
+      {name:'JasperReports',cat:'tools',catLabel:'Tools',icon:'ti-file-report',color:'#a0a8b0',bg:'rgba(255,255,255,0.05)',border:'rgba(255,255,255,0.12)',desc:'Enterprise reporting, PDF generation and complex data visualisation'},
+    ];
 
-      tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          tabs.forEach(t => t.classList.remove('active'));
-          tab.classList.add('active');
-          const cat = (tab as HTMLElement).dataset.cat;
-          cards.forEach(card => {
-            const c = card as HTMLElement;
-            if (cat === 'all' || c.dataset.cat === cat) {
-              c.classList.remove('hidden');
-            } else {
-              c.classList.add('hidden');
-            }
-          });
-        });
+    let currentCat = 'all';
+    let selected: string | null = null;
+
+    const pillsWrap = document.getElementById('skills-pills');
+    const detail = document.getElementById('skills-detail');
+    const empty = document.getElementById('skills-empty');
+    const content = document.getElementById('skills-content');
+    const iconEl = document.getElementById('skills-icon');
+    const nameEl = document.getElementById('skills-name');
+    const catEl = document.getElementById('skills-cat');
+    const descEl = document.getElementById('skills-desc');
+
+    function renderPills() {
+      if (!pillsWrap) return;
+      pillsWrap.innerHTML = '';
+      const filtered = currentCat === 'all' ? skills : skills.filter(s => s.cat === currentCat);
+      filtered.forEach(skill => {
+        const pill = document.createElement('button');
+        const isSelected = selected === skill.name;
+        pill.setAttribute('style', `
+          font-size:13px;
+          padding:6px 14px;
+          border-radius:8px;
+          border:1px solid ${skill.border};
+          background:${skill.bg};
+          color:${skill.color};
+          cursor:pointer;
+          display:inline-flex;
+          align-items:center;
+          gap:6px;
+          font-family:'Space Grotesk',sans-serif;
+          transition:all 0.15s;
+          ${isSelected ? `box-shadow:0 0 0 2px ${skill.color};` : ''}
+        `);
+        pill.innerHTML = `<i class="ti ${skill.icon}" aria-hidden="true"></i><span>${skill.name}</span>`;
+        pill.addEventListener('click', () => selectSkill(skill));
+        pillsWrap.appendChild(pill);
+      });
+    }
+
+    function selectSkill(skill: any) {
+      selected = skill.name;
+      renderPills();
+      if (!detail || !empty || !content || !iconEl || !nameEl || !catEl || !descEl) return;
+      detail.style.borderColor = skill.border;
+      empty.style.display = 'none';
+      content.style.display = 'block';
+      iconEl.style.background = skill.bg;
+      iconEl.innerHTML = `<i class="ti ${skill.icon}" style="color:${skill.color};font-size:18px" aria-hidden="true"></i>`;
+      nameEl.textContent = skill.name;
+      nameEl.style.color = skill.color;
+      catEl.textContent = skill.catLabel;
+      catEl.style.color = skill.color;
+      descEl.textContent = skill.desc;
+    }
+
+    document.querySelectorAll('.skill-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.skill-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        currentCat = (tab as HTMLElement).dataset.cat || 'all';
+        selected = null;
+        if (detail) detail.style.borderColor = 'rgba(255,255,255,0.07)';
+        if (empty) empty.style.display = 'block';
+        if (content) content.style.display = 'none';
+        renderPills();
       });
     });
+
+    renderPills();
+  });
   </script>
 
   <script>
@@ -1104,5 +1256,25 @@ import Layout from '../layouts/Layout.astro';
     });
   </script>  
 
+  <script>
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.ind-header').forEach(header => {
+        header.addEventListener('click', () => {
+          const item = header.closest('.ind-item') as HTMLElement;
+          const isOpen = item.dataset.open === 'true';
+
+          // Close all items first
+          document.querySelectorAll('.ind-item').forEach(i => {
+            (i as HTMLElement).dataset.open = 'false';
+          });
+
+          // If it wasn't open, open it
+          if (!isOpen) {
+            item.dataset.open = 'true';
+          }
+        });
+      });
+    });
+  </script>
 
 </Layout>
